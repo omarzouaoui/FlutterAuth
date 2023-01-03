@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/components/input_text_filed.dart';
 import 'package:flutter_auth/components/my_button.dart';
+import 'package:flutter_auth/components/square_tile.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -19,6 +20,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children:  [
               const SizedBox(height: 40,),
               //logo
@@ -31,8 +33,9 @@ class LoginPage extends StatelessWidget {
               Text(
                 "Welcome back you've been missed",
                 style: TextStyle(
-                  color: Colors.grey.shade600,
+                  color: Colors.grey.shade500,
                   fontSize: 15,
+                  fontWeight: FontWeight.bold
                 ),
               ),
               const SizedBox(height: 25.0,),
@@ -62,20 +65,21 @@ class LoginPage extends StatelessWidget {
                     Text(
                       "Forget Password?",
                       style: TextStyle(
-                        color: Colors.grey.shade600 
+                        color: Colors.grey.shade600,
+                        fontWeight: FontWeight.bold 
                       ),
                     ),
                   ],
                 ),
               ),
 
-              const SizedBox(height: 25.0,),
+              const SizedBox(height: 30.0,),
 
               MyButton(
                 onTap: SignUserIn,
               ),
 
-              const SizedBox(height: 50.0,),
+              const SizedBox(height: 40.0,),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -83,22 +87,23 @@ class LoginPage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Divider(
-                        thickness: 0.5,
+                        thickness: 1,
                         color: Colors.grey.shade500,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
                         "Or continue with",
                         style: TextStyle(
-                          color: Colors.grey.shade800
+                          color: Colors.grey.shade800,
+                          fontWeight: FontWeight.bold
                         ),
                         ),
                     ),
                     Expanded(
                       child: Divider(
-                        thickness: 0.5,
+                        thickness: 1,
                         color: Colors.grey.shade500,
                       ),
                     ),
@@ -106,36 +111,43 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
+              const SizedBox(height: 40.0,),
+
               Row(
-                children: [
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const[
                   //Googole Button
-                  Image.asset(
-                    "lib/images/google.png",
-                    height: 72.0,
-                    ),
+                  SquareTile(imagePath: "lib/images/google.png"),
 
-                  //Apple Button
-                  // Image.asset(
-                  //   "lib/images/apple.png",
-
-                  // )
+                  // SizedBox(width: 20.0,),
+                  // //Apple Button
+                  // SquareTile(imagePath: "lib/images/apple.png"),
                 ],
-                )
-              
+                ),
 
+                const SizedBox(height: 40.0),
 
-
-      
-              //forgot password
-      
-              //sign in button
-      
-              //or continue with
-      
-              //googole + app sign in
-      
-              //register
-      
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Not a member?",
+                      style: TextStyle(
+                        color: Colors.grey.shade800,
+                        fontWeight: FontWeight.bold
+                      ),
+                      ),
+                    const SizedBox(width: 4,),
+                    const Text(
+                      "Register Now",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold
+                      ),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 30.0,)
             ],
           ),
         ),
