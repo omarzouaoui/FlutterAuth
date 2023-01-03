@@ -106,6 +106,21 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
+              Row(
+                children: [
+                  //Googole Button
+                  Image.asset(
+                    "lib/images/google.png",
+                    height: 72.0,
+                    ),
+
+                  //Apple Button
+                  // Image.asset(
+                  //   "lib/images/apple.png",
+
+                  // )
+                ],
+                )
               
 
 
